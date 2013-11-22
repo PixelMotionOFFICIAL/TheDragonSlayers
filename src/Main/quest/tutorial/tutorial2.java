@@ -2,6 +2,7 @@ package Main.quest.tutorial;
 
 import Main.Game;
 import Main.quest.Quest;
+import Main.quest.QuestHandeler;
 
 public class tutorial2 extends Quest {
 
@@ -15,11 +16,12 @@ public class tutorial2 extends Quest {
 
 	public void isComplete() {
 
-		if (Game.player.talkingTo != null)
-			if (Game.player.talkingTo.type == "guide") {
+//		if (Game.player.talkingTo != null)
+//			if (Game.player.talkingTo.type == "guide") {
 				onComplete();
-			}
-
+				QuestHandeler.addCurrentQuest(test);
+//			}
+//
 	}
 
 }

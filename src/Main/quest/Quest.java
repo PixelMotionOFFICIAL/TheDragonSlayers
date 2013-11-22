@@ -4,6 +4,7 @@ import java.awt.Image;
 
 import Flash.Images.FImage;
 import Main.Game;
+import Main.quest.tutorial.test;
 import Main.quest.tutorial.tutorial1;
 import Main.quest.tutorial.tutorial2;
 
@@ -14,7 +15,9 @@ public class Quest {
 										"Talk to him by holding",
 										" right click on him and",
 										" draw to the right.", 2, "Glory", "/textures/quests/I.png");
-
+	public static Quest test = new test("Test", "Press F3", 100, "oiiihdsa", "/textures/quests/II.png");
+	
+	
 	public String name;
 	public String desc1;
 	public String desc2 = "";

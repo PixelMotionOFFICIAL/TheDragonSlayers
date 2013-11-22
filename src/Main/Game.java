@@ -49,7 +49,7 @@ public class Game extends Canvas {
 	public static Image toolTip;
 
 	public Screen screen;
-	public Keyboard key;
+	public static Keyboard key;
 	public static Level level;
 
 	public static Mob player;
@@ -78,6 +78,7 @@ public class Game extends Canvas {
 	public static int x; // X Offset for the screen and mobs.
 	public static int y; // Y Offset for the screen and mobs.
 
+	@SuppressWarnings("static-access")
 	public Game(Keyboard key) {
 
 		Setups.setupGUIs(); // Setting up all guis.
