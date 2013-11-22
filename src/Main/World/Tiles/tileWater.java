@@ -6,16 +6,22 @@ import FrameWork.Screen;
 import Main.World.Tile;
 
 public class tileWater extends Tile {
+	
+	int anim = 0;
+	int ss = -1;
 
 	public tileWater(String n, String path, int color) {
 		super(n, path, color);
 	}
 	
-	
-
-	@Override
 	public void render(int x, int y, Graphics g, Screen s) {
-		s.renderTile(x, y, this.texture, g);
+		anim++;
+		if(anim % 35000 == 0) {
+			ss *= -1;
+		}
+		
+		if(ss == -1) s.renderTile(x, y, this.texture, g);
+		if(ss == 1) s.renderTile(x, y, water1.texture, g);
 	}
 
 }

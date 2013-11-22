@@ -25,8 +25,14 @@ public class Tile {
 	public static Tile grass = new tileGrass("Grass", "/textures/Tiles/grass.png", 0xff4CFF00);
 	public static Tile sand = new tileSand("Sand", "/textures/Tiles/sand.png", 0xffFFD800);
 	public static Tile water = new tileWater("Water","/textures/Tiles/water.png", 0xff0094FF);
-	public static Tile plank = new tilePlank("Water","/textures/Tiles/plank.png", 0xff7F3300);
+	public static Tile plank = new tilePlank("Plank","/textures/Tiles/plank.png", 0xff7F3300);
 	public static Tile door = new tilePlank("Door","/textures/Tiles/door.png", 0xff7F0000);
+	public static Tile water1 = new tileWater("Water","/textures/Tiles/water1.png", 0xff0094FF);
+	
+	/*
+	 * Water is the original tile. Water1 however is the animation tile,
+	 * change the location and ever second or so it will update the animation - Jacob
+	 */
 	
 	
 	//Buildings

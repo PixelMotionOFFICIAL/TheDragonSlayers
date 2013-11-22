@@ -191,7 +191,7 @@ public class Start extends Canvas implements Runnable {
 		bs.show();
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {		
 		Start game = new Start();
 		game.frame.setResizable(false);
 		game.frame.add(game);
