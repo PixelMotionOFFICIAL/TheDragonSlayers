@@ -11,6 +11,8 @@ public class Screen {
 	public int WIDTH, HEIGHT;
 	public int xOffset, yOffset;
 	public int spriteSize;
+	
+	Graphics graph;
 
 	public int playerWidth, playerHeight;
 
@@ -33,6 +35,10 @@ public class Screen {
 			}
 	}
 
+	public void renderSprite(Sprite s) {
+		graph.drawImage(s.image, 0, 0, null);
+	}
+	
 	public void renderPlayer(Graphics g, int x, int y, Image sprite) {
 		playerWidth = 58;
 		playerHeight = 62;
@@ -62,8 +68,9 @@ public class Screen {
 			}
 	}
 
-	public void setOffset(int x, int y) {
+	public void setOffset(int x, int y, Graphics g) {
 		xOffset = x;
+		graph = g;
 		yOffset = y;
 	}
 

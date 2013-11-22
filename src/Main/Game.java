@@ -11,6 +11,7 @@ import Flash.Button.Mouse;
 import Flash.Images.FImage;
 import Flash.Input.Keyboard;
 import FrameWork.Screen;
+import FrameWork.Sprite;
 import Main.GUI.GUIHandeler;
 import Main.GUI.Mouse.option.FastOption;
 import Main.GUI.Mouse.option.optSpawnMob;
@@ -241,7 +242,7 @@ public class Game extends Canvas {
 
 	public void render(Graphics g) {
 
-		screen.setOffset(-x, -y);
+		screen.setOffset(-x, -y, g);
 		level.render(-x, -y, g);
 
 		if (camMode.equalsIgnoreCase("mouse"))
@@ -261,6 +262,8 @@ public class Game extends Canvas {
 		
 		targetThing.render(g);
 
+		screen.renderSprite(Sprite.random);
+		
 		if (debug) {
 			g.setColor(new Color(255, 255, 255));
 			g.setFont(new Font("Verdana", 1, 10));
