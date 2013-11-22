@@ -5,6 +5,7 @@ import java.awt.Image;
 
 import Flash.Images.FImage;
 import FrameWork.Screen;
+import FrameWork.Sprite;
 import Main.World.Tiles.tileGrass;
 import Main.World.Tiles.tilePlank;
 import Main.World.Tiles.tileSand;
@@ -17,6 +18,7 @@ public class Tile {
 	public String name;
 	public Image texture;
 	public int color;
+	public Sprite sprite;
 	
 	/*
 	 * Register tiles below.
@@ -51,6 +53,10 @@ public class Tile {
 	
 	public Tile() {
 		
+	}
+	
+	public Tile(Sprite sprite) {
+		this.sprite = sprite;
 	}
 	
 	public boolean solid() {

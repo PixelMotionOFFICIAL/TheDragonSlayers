@@ -262,7 +262,6 @@ public class Game extends Canvas {
 		
 		targetThing.render(g);
 
-		screen.renderSprite(Sprite.random);
 		
 		if (debug) {
 			g.setColor(new Color(255, 255, 255));

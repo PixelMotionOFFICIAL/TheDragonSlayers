@@ -1,26 +1,43 @@
 package FrameWork;
 
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-
 public class Sprite {
 
+	public final int SIZE;
+	private int x, y;
 	public int[] pixels;
-	public int width, height;
-	public Image image;
+	private SpriteSheet sheet;
+	
+	//public static Sprite (name) = new Sprite([size], [x location], [y location], [name of sheet]);
+	public static Sprite test = new Sprite(64, 0, 0, SpriteSheet.tiles);
 
-	public static Sprite random = new Sprite(0, 0, 64, 64, SpriteSheet.tiles);
+	public Sprite(int size, int x, int y, SpriteSheet sheet) {
+		SIZE = size;
+		pixels = new int[SIZE * SIZE]; // Size of our sprite
+		this.x = x * size;
+		this.y = y * size;
+		this.sheet = sheet;
+		load();
+	}
 
-	public Sprite(int x, int y, int width, int height, SpriteSheet s) {
-		BufferedImage b = s.image;
-		image = s.image;
-		this.width = width;
-		this.height = height;
+	public Sprite(int size, int colour) {
+		this.SIZE = size;
+		pixels = new int[SIZE * SIZE];
+		setColour(colour);
+	}
 
-		b.getRGB(x, y, width, height, pixels, 0, width);
+	private void setColour(int colour) {
+		for (int i = 0; i < SIZE * SIZE; i++) {
+			pixels[i] = colour;
+		}
+	}
 
-		((BufferedImage) image).setRGB(0, 0, width, height, pixels, 0, width);
+	private void load() {
+		for (int y = 0; y < SIZE; y++) {
+			for (int x = 0; x < SIZE; x++) {
+				pixels[x + y * SIZE] = sheet.pixels[(x + this.x) + (y + this.y) * sheet.SIZE];
 
+			}
+		}
 	}
 
 }
