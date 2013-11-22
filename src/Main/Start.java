@@ -21,6 +21,9 @@ public class Start extends Canvas implements Runnable {
 	/*
 	 * This class is made by v7_FlasH. Last updated 2013-06-14.
 	 */
+	
+	
+	//HDISKAJFDPOEJGFAOSJKMFA!!
 
 	public enum State {
 		MENU, GAME, DEAD
