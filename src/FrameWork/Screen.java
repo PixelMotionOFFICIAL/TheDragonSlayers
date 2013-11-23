@@ -5,7 +5,6 @@ import java.awt.Image;
 
 import Main.Start;
 import Main.World.Level;
-import Main.World.Tile;
 
 public class Screen {
 
@@ -89,24 +88,6 @@ public class Screen {
 		    if(xa < -sprite.SIZE || xa >= WIDTH || ya < 0 || ya >= HEIGHT) break;
 		    if (xa < 0) xa = 0;
 		    int col = sprite.pixels[x + y * sprite.SIZE];
-		    if(col != 0xffff00ff) pixels[xa + ya * WIDTH] = col;
-			
-			}
-		}
-	}
-	
-	public void renderTileTest(int xp, int yp, Tile tile) {
-		xp -= xOffset;
-		yp -= yOffset;
-		
-		for(int y = 0; y < tile.sprite.SIZE; y++) {
-			int ya = y + yp;
-        for(int x = 0; x < tile.sprite.SIZE; x++) {
-		    int xa = x + xp;
-		   
-		    if(xa < -tile.sprite.SIZE || xa >= WIDTH || ya < 0 || ya >= HEIGHT) break;
-		    if (xa < 0) xa = 0;
-		    int col = tile.sprite.pixels[x + y * tile.sprite.SIZE];
 		    if(col != 0xffff00ff) pixels[xa + ya * WIDTH] = col;
 			
 			}
